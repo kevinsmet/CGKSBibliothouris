@@ -33,6 +33,7 @@ public class Book {
         return authorLastName;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

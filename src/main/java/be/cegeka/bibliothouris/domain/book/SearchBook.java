@@ -23,6 +23,33 @@ public class SearchBook extends BookService {
         result = stream.filter(book -> p.matcher(book.getIsbn()).matches()).collect(Collectors.toList());
         return result;
     }
+
+
+public List<Book> searchTitle (String letter){
+    List<Book> result = new ArrayList<>();
+    Stream<Book>stream = bookList.stream();
+    Pattern p = Pattern.compile(letter);
+    result = stream.filter(book -> p.matcher(book.getTitle()).matches()).collect(Collectors.toList());
+    return result;
+}
+
+
+
+public List <Book> searchAuthorLastName (String letter){
+    List<Book>result = new ArrayList<>();
+    Stream<Book>stream = bookList.stream();
+    Pattern p = Pattern.compile(letter);
+    result = stream.filter(book ->p.matcher(book.getAuthorLastName()).matches()).collect(Collectors.toList());
+    return result;
+}
+public List <Book> searchAuthorFirstName (String letter){
+        List<Book>result = new ArrayList<>();
+        Stream<Book>stream = bookList.stream();
+        Pattern p = Pattern.compile(letter);
+        result = stream.filter(book ->p.matcher(book.getAuthorFirstName()).matches()).collect(Collectors.toList());
+        return result;
+    }
+
 }
 /*List<String>results =
          stream.filter(s -> pattern.matcher(s).matches())
