@@ -45,7 +45,6 @@ public class BookController {
         return bookService.detailBook(isbn);
     }
 
-
 }
 
 
