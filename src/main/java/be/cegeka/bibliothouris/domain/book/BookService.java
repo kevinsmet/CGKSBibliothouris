@@ -18,12 +18,12 @@ public class BookService {
         return bookRepository.getBooks();
     }
 
-    public void addBook(int isbn, String title, String authorFirstName, String authorLastName){
+    public void addBook(String isbn, String title, String authorFirstName, String authorLastName){
         Book book = new Book(isbn, title, authorFirstName, authorLastName);
         bookRepository.addBook(book);
     }
 
-    public String detailBook (int isbn) {
+    public String detailBook (String isbn) {
         String output = "";
         for (Book book : getAllBooks()) {
             if (isbn == book.getIsbn()){
