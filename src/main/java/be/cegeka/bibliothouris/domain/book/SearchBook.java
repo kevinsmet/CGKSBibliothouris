@@ -2,6 +2,7 @@ package be.cegeka.bibliothouris.domain.book;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -13,12 +14,14 @@ import java.util.stream.Stream;
  */
 public class SearchBook extends BookService {
     List<Book> bookList = getAllBooks();
-    Stream<Book> stream = bookList.stream();
 
 
-    public String searchIsbn(String isbn) {
-                Pattern p = Pattern.compile(isbn);
-        List<String> result = stream.filter
+    public List<Book> searchIsbn(String number) {
+        List<Book> result = new ArrayList<>();
+        Stream<Book> stream = bookList.stream();
+        Pattern p = Pattern.compile(number);
+        result = stream.filter(book -> p.matcher(book.getIsbn()).matches()).collect(Collectors.toList());
+        return result;
     }
 }
 /*List<String>results =
