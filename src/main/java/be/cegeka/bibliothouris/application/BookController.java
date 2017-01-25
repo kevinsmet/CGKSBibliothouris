@@ -30,12 +30,16 @@ public class BookController {
             return bookService.getAllBooks();
         }
 
-//        @RequestMapping(method = RequestMethod.POST)
-//        public
-//        @ResponseBody
-//        void addUser(@RequestParam(value = "name", required = true) String name) {
-//            bookService.addUser(name);
-//        }
+        @RequestMapping(method = RequestMethod.POST)
+        public
+        @ResponseBody
+
+        void addBook(@RequestParam(value = "isbn", required = true) int isbn,
+                     @RequestParam(value = "titel", required = true) String titel,
+                     @RequestParam(value = "titel", required = true) String firstName,
+                     @RequestParam(value = "titel", required = true) String lastName) {
+            bookService.addBook(isbn, titel, firstName, lastName);
+        }
 
 
 

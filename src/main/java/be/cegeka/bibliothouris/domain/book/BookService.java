@@ -19,7 +19,7 @@ public class BookService {
     }
 
     public void addBook(int isbn, String title, String authorFirstName, String authorLastName){
-        Book book = new Book(isbn, title, authorFirstName, authorLastName);
-        bookRepository.addBook(book);
+
+        bookRepository.addBook(new Book(isbn, title, authorFirstName, authorLastName));
     }
 }
