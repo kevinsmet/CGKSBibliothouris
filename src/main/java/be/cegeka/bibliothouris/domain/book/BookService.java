@@ -22,4 +22,16 @@ public class BookService {
         Book book = new Book(isbn, title, authorFirstName, authorLastName);
         bookRepository.addBook(book);
     }
+
+    public String detailBook (int isbn) {
+        String output = "";
+        for (Book book : getAllBooks()) {
+            if (isbn == book.getIsbn()){
+                output = "ISBN : "+book.getIsbn() + " Title : "+book.getTitle();
+
+            }
+        }
+        return output;
+    }
+
 }
