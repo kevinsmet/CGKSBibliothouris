@@ -5,19 +5,19 @@ package be.cegeka.bibliothouris.domain.book;
  */
 public class Book {
 
-    private int isbn;
+    private String isbn;
     private String title;
     private String authorFirstName;
     private String authorLastName;
 
-    public Book(int isbn, String title, String authorName, String authorLastName) {
+    public Book(String isbn, String title, String authorName, String authorLastName) {
         this.isbn = isbn;
         this.title = title;
         this.authorFirstName = authorName;
         this.authorLastName = authorLastName;
     }
 
-    public int getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
@@ -40,11 +40,12 @@ public class Book {
 
         Book book = (Book) o;
 
-        return isbn == book.isbn;
+        return isbn != null ? isbn.equals(book.isbn) : book.isbn == null;
     }
 
     @Override
     public int hashCode() {
-        return isbn;
+        return isbn != null ? isbn.hashCode() : 0;
     }
 }
+
