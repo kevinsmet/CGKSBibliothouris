@@ -18,7 +18,7 @@ public class SearchBook extends BookService {
 
     public String searchIsbn(String isbn) {
                 Pattern p = Pattern.compile(isbn);
-        List<String> result = stream.filter(s-> 
+        List<String> result = stream.filter
     }
 }
 /*List<String>results =
