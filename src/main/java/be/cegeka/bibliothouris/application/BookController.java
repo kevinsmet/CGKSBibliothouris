@@ -38,7 +38,7 @@ public class BookController {
         bookService.addBook(isbn, title, firstName, lastName);
     }
 
-    @RequestMapping(value = "/book" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/bookdetail" ,method = RequestMethod.GET)
     public
     @ResponseBody
     String detailBook(@RequestParam(value = "isbn", required = true) int isbn) {
