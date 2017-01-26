@@ -22,7 +22,7 @@ public class SearchBook extends BookService {
     }*/
 
     public String searchIsbn(String number) {
-        bookList  = getAllBooks();
+        bookList  = super.getAllBooks();
         List<Book> result = new ArrayList<>();
         Stream<Book> stream = bookList.stream();
         Pattern p = Pattern.compile(number);

@@ -33,7 +33,7 @@ public class BookServiceTest {
 
     @Before
     public void setUp() throws Exception {
-        ReflectionTestUtils.setField(bookRepository,  "books", new ArrayList<Book>);
+        ReflectionTestUtils.setField(bookRepository,  "books", new ArrayList<Book>());
     }
 
 }
