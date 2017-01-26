@@ -47,12 +47,14 @@ public class BookController {
         return bookService.detailBook(isbn);
     }
 
+
     @RequestMapping(value = "/booksearch", method = RequestMethod.GET)
     public
     @ResponseBody
     String searchIsbn(@RequestParam(value = "isbn", required = true) String isbn) {
         return bookService.detailBook(isbn);
     }
+
 }
 
 

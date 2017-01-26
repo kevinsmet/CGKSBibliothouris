@@ -12,15 +12,12 @@ import java.util.stream.Stream;
 /**
  * Created by kevinsm on 25/01/2017.
  */
-<<<<<<< HEAD
-public class SearchBook {
-    List<Book> bookList = new BookService().getAllBooks();
-=======
+
+
 @Named
 public class SearchBook extends BookService {
     List<Book> bookList = getAllBooks();
 
->>>>>>> 24ef9905dad4036667fe7577c9395a42c9cb7004
 
     public List<Book> searchIsbn(String number) {
         List<Book> result = new ArrayList<>();
@@ -29,33 +26,31 @@ public class SearchBook extends BookService {
         result = stream.filter(book -> p.matcher(book.getIsbn()).matches()).collect(Collectors.toList());
         return result;
     }
-<<<<<<< HEAD
-}
-=======
-
-
-public List<Book> searchTitle (String letter){
-    List<Book> result = new ArrayList<>();
-    Stream<Book>stream = bookList.stream();
-    Pattern p = Pattern.compile(letter);
-    result = stream.filter(book -> p.matcher(book.getTitle()).matches()).collect(Collectors.toList());
-    return result;
-}
 
 
 
-public List <Book> searchAuthorLastName (String letter){
-    List<Book>result = new ArrayList<>();
-    Stream<Book>stream = bookList.stream();
-    Pattern p = Pattern.compile(letter);
-    result = stream.filter(book ->p.matcher(book.getAuthorLastName()).matches()).collect(Collectors.toList());
-    return result;
-}
-public List <Book> searchAuthorFirstName (String letter){
-        List<Book>result = new ArrayList<>();
-        Stream<Book>stream = bookList.stream();
+    public List<Book> searchTitle(String letter) {
+        List<Book> result = new ArrayList<>();
+        Stream<Book> stream = bookList.stream();
         Pattern p = Pattern.compile(letter);
-        result = stream.filter(book ->p.matcher(book.getAuthorFirstName()).matches()).collect(Collectors.toList());
+        result = stream.filter(book -> p.matcher(book.getTitle()).matches()).collect(Collectors.toList());
+        return result;
+    }
+
+
+    public List<Book> searchAuthorLastName(String letter) {
+        List<Book> result = new ArrayList<>();
+        Stream<Book> stream = bookList.stream();
+        Pattern p = Pattern.compile(letter);
+        result = stream.filter(book -> p.matcher(book.getAuthorLastName()).matches()).collect(Collectors.toList());
+        return result;
+    }
+
+    public List<Book> searchAuthorFirstName(String letter) {
+        List<Book> result = new ArrayList<>();
+        Stream<Book> stream = bookList.stream();
+        Pattern p = Pattern.compile(letter);
+        result = stream.filter(book -> p.matcher(book.getAuthorFirstName()).matches()).collect(Collectors.toList());
         return result;
     }
 
@@ -84,4 +79,4 @@ public List <Book> searchAuthorFirstName (String letter){
 31
 
 */
->>>>>>> 24ef9905dad4036667fe7577c9395a42c9cb7004
+

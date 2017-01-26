@@ -28,7 +28,7 @@ public class BookService {
     public String detailBook (String isbn) {
         String output = "";
         for (Book book : getAllBooks()) {
-            if (isbn == book.getIsbn()){
+            if (isbn.equals(book.getIsbn())){
                 output = "ISBN : "+book.getIsbn() + " Title : "+book.getTitle();
 
             }
@@ -36,9 +36,12 @@ public class BookService {
         return output;
     }
 
-//    public String showSearchIsbn() {
-//        return searchBook.showSearchIsbn();
-//    }
+
+
+    public String showSearchIsbn() {
+        return searchBook.showSearchIsbn();
+    }
+
 
 
 
