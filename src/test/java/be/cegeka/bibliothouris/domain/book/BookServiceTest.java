@@ -34,6 +34,12 @@ public class BookServiceTest {
     @Mock
     private BookRepository bookRepository;
 
+    @Before
+    public void setup() {
+        Book bookTest = new Book("12345", "Harry Potter", "J.K.", "Rowling");
+        bookRepository.addBook(bookTest);
+    }
+
     @Test
     public void addBook_ShouldCallUserRepository() throws Exception {
         bookService.addBook("20", "Da VInce Code", "Dan","Brown");
@@ -52,9 +58,15 @@ public class BookServiceTest {
 
     }
 
+    @Test
+    public void detailBook_returnsBookDetails () throws Exception {
+        when(bookRepository.getBooks()).thenReturn(Arrays.asList((new Book("12345", "Harry Potter", "J.K.", "Rowling"))));
+        String expected = "ISBN : 12345 Title : Harry Potter";
+        Assertions.assertThat(bookService.detailBook("12345")).isEqualTo(expected);
+
+
+    }
+
             //When book repo gets books from getBooks method, make sure that these books are
             // also added to the list in bookService via List method 'getallbooks'
-
-
-
 }
