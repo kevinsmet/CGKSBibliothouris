@@ -1,6 +1,7 @@
 package be.cegeka.bibliothouris.application;
 
 import be.cegeka.bibliothouris.domain.book.Book;
+import be.cegeka.bibliothouris.domain.book.BookRepository;
 import be.cegeka.bibliothouris.domain.book.BookService;
 import be.cegeka.bibliothouris.domain.book.SearchBook;
 import org.springframework.stereotype.Controller;
@@ -23,7 +24,9 @@ public class BookController {
 
     @Inject
     private BookService bookService;
-    //private SearchBook searchBook;
+
+    @Inject
+     private BookRepository bookRepository;
 
     @RequestMapping(value = "/book", method = RequestMethod.GET)
     public
@@ -53,8 +56,28 @@ public class BookController {
     @RequestMapping(value = "/booksearch", method = RequestMethod.GET)
     public
     @ResponseBody
-    String searchIsbn(@RequestParam(value = "isbn", required = true) String isbn) {
-        return bookService.showSearchIsbn(isbn);
+
+    List<Book>  searchIsbn(@RequestParam(value = "isbn", required = true) String isbn) {
+        return bookRepository.showSearchBookISBN(isbn);
+    }
+    @RequestMapping(path = "/booksearch/title", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    List<Book>  searchTitle(@RequestParam(value = "title", required = true) String letter) {
+        return bookRepository.showSearchTitle(letter);
+    }
+    @RequestMapping(path = "/booksearch/lastName", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    List<Book>  searchAuthorLastName(@RequestParam(value = "lastName", required = true) String letter) {
+        return bookRepository.showSearchAuthorLastName(letter);
+    }
+    @RequestMapping(path = "/booksearch/firstName", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    List<Book>  searchAuthorFirstName(@RequestParam(value = "firstName", required = true) String letter) {
+        return bookRepository.showSearchAuthorFirstName(letter);
+
     }
 
 }

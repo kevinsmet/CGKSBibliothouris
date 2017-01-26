@@ -33,7 +33,6 @@ public class Book {
         return authorLastName;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -47,6 +46,10 @@ public class Book {
     @Override
     public int hashCode() {
         return isbn != null ? isbn.hashCode() : 0;
+    }
+
+    public String toString(){
+        return "ISBN:" + isbn + "\n" +  "Title:" + title + "\n" + "First Name:" + authorFirstName + "\n" + "Last Name:" + authorLastName+ "\n";
     }
 }
 
