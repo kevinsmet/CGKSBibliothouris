@@ -9,15 +9,15 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
-/**
- * Created by kevinsm on 25/01/2017.
- */
 @Named
 
 public class SearchBook  {
 
 
+
     public List<Book>  searchIsbn(String number, List<Book> books) {
+
+
         List<Book> result = new ArrayList<>();
         Stream<Book> stream = books.stream();
         Pattern p = Pattern.compile(number+".*");
