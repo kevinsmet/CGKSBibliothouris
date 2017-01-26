@@ -36,10 +36,6 @@ public class BookService {
         return output;
     }
 
-<<<<<<< HEAD
-    public String showSearchIsbn(String isbn) {
-        return searchBook.searchIsbn(isbn);
-=======
     public String printSearch(List<Book> resultBooks){
         String result = "";
         if(resultBooks.isEmpty()){
@@ -49,7 +45,7 @@ public class BookService {
             result += book.toString();
         }
         return result;
->>>>>>> c153781c119caf4f8cfdee8768919be619571791
+
     }
 
 }
