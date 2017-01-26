@@ -1,8 +1,5 @@
 package be.cegeka.bibliothouris.domain.book;
 
-import be.cegeka.bibliothouris.domain.users.User;
-import be.cegeka.bibliothouris.domain.users.UserRepository;
-import be.cegeka.bibliothouris.domain.users.UserService;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Rule;
@@ -11,14 +8,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
-import org.springframework.test.util.ReflectionTestUtils;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
