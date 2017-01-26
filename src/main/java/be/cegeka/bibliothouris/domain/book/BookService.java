@@ -36,8 +36,16 @@ public class BookService {
         return output;
     }
 
-
-
+    public String printSearch(List<Book> resultBooks){
+        String result = "";
+        if(resultBooks.isEmpty()){
+            result= "No books match that search criteria";
+        }
+        for(Book book : resultBooks){
+            result += book.toString();
+        }
+        return result;
+    }
 
     public String showSearchIsbn(String isbn) {
         return searchBook.searchIsbn(isbn);

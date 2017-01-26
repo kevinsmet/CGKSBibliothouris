@@ -57,8 +57,7 @@ public class BookServiceTest {
         Assertions.assertThat(bookService.getAllBooks()).containsOnly(book1, book2, book3);
 
     }
-
-
+    
     @Test
     public void detailBook_returnsBookDetails () throws Exception {
         when(bookRepository.getBooks()).thenReturn(Arrays.asList((new Book("12345", "Harry Potter", "J.K.", "Rowling"))));
