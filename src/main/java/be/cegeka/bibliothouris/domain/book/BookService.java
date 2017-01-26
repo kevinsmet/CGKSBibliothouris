@@ -21,7 +21,7 @@ public class BookService {
 
     public void addBook(String isbn, String title, String authorFirstName, String authorLastName){
         Book book = new Book(isbn, title, authorFirstName, authorLastName);
-        bookRepository.addBook(book);
+        bookRepository.addB ook(book);
     }
 
     public String detailBook (String isbn) {
