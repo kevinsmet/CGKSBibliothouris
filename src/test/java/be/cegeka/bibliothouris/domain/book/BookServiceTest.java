@@ -48,17 +48,16 @@ public class BookServiceTest {
     }
 
     @Test
-    public void getAllBooks()throws Exception{
-        Book book1 = new Book ("20", "Da VInce Code 0", "Dan0","Brown0");
-        Book book2 = new Book ("30", "Da VInce Code 1", "Dan1","Brown1");
-        Book book3 = new Book ("40", "Da VInce Code 2", "Dan2","Brown2");
+    public void getAllBooks()throws Exception {
+        Book book1 = new Book("20", "Da VInce Code 0", "Dan0", "Brown0");
+        Book book2 = new Book("30", "Da VInce Code 1", "Dan1", "Brown1");
+        Book book3 = new Book("40", "Da VInce Code 2", "Dan2", "Brown2");
 
-        when(bookRepository.getBooks()).thenReturn(Arrays.asList(book1,book2,book3));
-        Assertions.assertThat(bookService.getAllBooks()).containsOnly(book1,book2,book3) ;
+        when(bookRepository.getBooks()).thenReturn(Arrays.asList(book1, book2, book3));
+        Assertions.assertThat(bookService.getAllBooks()).containsOnly(book1, book2, book3);
 
-        //When book repo gets books from getBooks method, make sure that these books are
-        // also added to the list in bookService via List method 'getallbooks'
     }
+
 
     @Test
     public void detailBook_returnsBookDetails () throws Exception {
@@ -69,4 +68,6 @@ public class BookServiceTest {
 
     }
 
+            //When book repo gets books from getBooks method, make sure that these books are
+            // also added to the list in bookService via List method 'getallbooks'
 }

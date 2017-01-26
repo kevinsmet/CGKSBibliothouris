@@ -12,6 +12,7 @@ public class BookService {
 
     @Inject
     private BookRepository bookRepository;
+    @Inject
     private SearchBook searchBook;
 
     public List<Book> getAllBooks(){
