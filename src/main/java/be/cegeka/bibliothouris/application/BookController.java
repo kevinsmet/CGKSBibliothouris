@@ -53,7 +53,7 @@ public class BookController {
     @RequestMapping(value = "/booksearch", method = RequestMethod.GET)
     public
     @ResponseBody
-    String searchIsbn(@RequestParam(value = "isbn", required = true) String isbn) {
+    List<Book> searchIsbn(@RequestParam(value = "isbn", required = true) String isbn) {
         return bookService.showSearchIsbn(isbn);
     }
 
