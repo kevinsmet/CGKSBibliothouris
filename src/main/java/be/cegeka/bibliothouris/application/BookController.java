@@ -2,6 +2,7 @@ package be.cegeka.bibliothouris.application;
 
 import be.cegeka.bibliothouris.domain.book.Book;
 import be.cegeka.bibliothouris.domain.book.BookService;
+import be.cegeka.bibliothouris.domain.book.SearchBook;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,6 +23,7 @@ public class BookController {
 
     @Inject
     private BookService bookService;
+    //private SearchBook searchBook;
 
     @RequestMapping(value = "/book", method = RequestMethod.GET)
     public
@@ -52,7 +54,7 @@ public class BookController {
     public
     @ResponseBody
     String searchIsbn(@RequestParam(value = "isbn", required = true) String isbn) {
-        return bookService.detailBook(isbn);
+        return bookService.showSearchIsbn(isbn);
     }
 
 }

@@ -10,7 +10,6 @@ import java.util.List;
 @Named
 public class BookService {
 
-
     @Inject
     private BookRepository bookRepository;
     private SearchBook searchBook;
@@ -38,10 +37,10 @@ public class BookService {
 
 
 
-    public String showSearchIsbn() {
-        return searchBook.showSearchIsbn();
-    }
 
+    public String showSearchIsbn(String isbn) {
+        return searchBook.searchIsbn(isbn);
+    }
 
 
 
