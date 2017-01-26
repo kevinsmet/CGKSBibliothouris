@@ -13,6 +13,7 @@ public class BookService {
 
     @Inject
     private BookRepository bookRepository;
+    private SearchBook searchBook;
 
     public List<Book> getAllBooks(){
         return bookRepository.getBooks();
@@ -34,5 +35,15 @@ public class BookService {
         }
         return output;
     }
+
+//    public String showSearchIsbn() {
+//        return searchBook.showSearchIsbn();
+//    }
+
+
+
+
+
+
 
 }
