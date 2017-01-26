@@ -12,17 +12,21 @@ import java.util.stream.Stream;
 /**
  * Created by kevinsm on 25/01/2017.
  */
-
+@Named
 public class SearchBook extends BookService {
-    List<Book> bookList = getAllBooks();
+    List<Book> bookList;
 
+   /* public SearchBook(){
+        bookList  = getAllBooks();
+    }*/
 
-    public List<Book> searchIsbn(String number) {
+    public String searchIsbn(String number) {
+        bookList  = getAllBooks();
         List<Book> result = new ArrayList<>();
         Stream<Book> stream = bookList.stream();
         Pattern p = Pattern.compile(number);
         result = stream.filter(book -> p.matcher(book.getIsbn()).matches()).collect(Collectors.toList());
-        return result;
+        return result.toString();
     }
 
 
