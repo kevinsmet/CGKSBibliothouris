@@ -10,6 +10,9 @@ public class BookRepository {
     @Inject
     private SearchBook searchBook;
 
+    @Inject
+    private BookService bookService;
+
     private List<Book> books = new ArrayList<>();
 
     public List<Book> getBooks() {
@@ -20,17 +23,18 @@ public class BookRepository {
         books.add(book);
     }
 
-    public List<Book>  showSearchBookISBN(String nummer){
-        return searchBook.searchIsbn(nummer, books);
+    public String showSearchBookISBN(String nummer){
+        return bookService.printSearch(searchBook.searchIsbn(nummer, books));
+
     }
-    public List<Book>  showSearchTitle(String letter){
-        return searchBook.searchTitle(letter, books);
+    public String   showSearchTitle(String letter){
+        return bookService.printSearch(searchBook.searchTitle(letter, books));
     }
-    public List<Book>  showSearchAuthorFirstName(String letter){
-        return searchBook.searchAuthorFirstName(letter, books);
+    public String   showSearchAuthorFirstName(String letter){
+        return bookService.printSearch(searchBook.searchAuthorFirstName(letter, books));
     }
-    public List<Book>  showSearchAuthorLastName(String letter){
-        return searchBook.searchAuthorLastName(letter, books);
+    public String  showSearchAuthorLastName(String letter){
+        return bookService.printSearch(searchBook.searchAuthorLastName(letter, books));
     }
 
 

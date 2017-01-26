@@ -53,29 +53,29 @@ public class BookController {
     }
 
 
-    @RequestMapping(value = "/booksearch", method = RequestMethod.GET)
+    @RequestMapping(value = "/booksearch/isbn", method = RequestMethod.GET)
     public
     @ResponseBody
 
-    List<Book>  searchIsbn(@RequestParam(value = "isbn", required = true) String isbn) {
+    String  searchIsbn(@RequestParam(value = "isbn", required = true) String isbn) {
         return bookRepository.showSearchBookISBN(isbn);
     }
     @RequestMapping(path = "/booksearch/title", method = RequestMethod.GET)
     public
     @ResponseBody
-    List<Book>  searchTitle(@RequestParam(value = "title", required = true) String letter) {
+    String   searchTitle(@RequestParam(value = "title", required = true) String letter) {
         return bookRepository.showSearchTitle(letter);
     }
     @RequestMapping(path = "/booksearch/lastName", method = RequestMethod.GET)
     public
     @ResponseBody
-    List<Book>  searchAuthorLastName(@RequestParam(value = "lastName", required = true) String letter) {
+    String  searchAuthorLastName(@RequestParam(value = "lastName", required = true) String letter) {
         return bookRepository.showSearchAuthorLastName(letter);
     }
     @RequestMapping(path = "/booksearch/firstName", method = RequestMethod.GET)
     public
     @ResponseBody
-    List<Book>  searchAuthorFirstName(@RequestParam(value = "firstName", required = true) String letter) {
+    String  searchAuthorFirstName(@RequestParam(value = "firstName", required = true) String letter) {
         return bookRepository.showSearchAuthorFirstName(letter);
 
     }

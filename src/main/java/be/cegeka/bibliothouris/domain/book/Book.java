@@ -49,7 +49,7 @@ public class Book {
     }
 
     public String toString(){
-        return "ISBN:" + isbn + "\n" +  "Title:" + title + "\n" + "First Name:" + authorFirstName + "\n" + "Last Name:" + authorLastName+ "\n";
+        return "ISBN:" + isbn + "\n" +  "Title:" + title + "\n" + "First Name:" + authorFirstName + "\n" + "Last Name:" + authorLastName+ "\n\n";
     }
 }
 
