@@ -56,6 +56,7 @@ public class BookController {
     @RequestMapping(value = "/booksearch", method = RequestMethod.GET)
     public
     @ResponseBody
+
     List<Book>  searchIsbn(@RequestParam(value = "isbn", required = true) String isbn) {
         return bookRepository.showSearchBookISBN(isbn);
     }
@@ -76,6 +77,7 @@ public class BookController {
     @ResponseBody
     List<Book>  searchAuthorFirstName(@RequestParam(value = "firstName", required = true) String letter) {
         return bookRepository.showSearchAuthorFirstName(letter);
+
     }
 
 }
