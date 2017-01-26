@@ -18,6 +18,7 @@ public class BookService {
         return bookRepository.getBooks();
     }
 
+
     public void addBook(String isbn, String title, String authorFirstName, String authorLastName){
         Book book = new Book(isbn, title, authorFirstName, authorLastName);
         bookRepository.addBook(book);
@@ -26,7 +27,7 @@ public class BookService {
     public String detailBook (String isbn) {
         String output = "";
         for (Book book : getAllBooks()) {
-            if (isbn == book.getIsbn()){
+            if (isbn.equals(book.getIsbn())){
                 output = "ISBN : "+book.getIsbn() + " Title : "+book.getTitle();
 
             }
@@ -34,9 +35,12 @@ public class BookService {
         return output;
     }
 
+
+
     public String showSearchIsbn() {
         return searchBook.showSearchIsbn();
     }
+
 
 
 

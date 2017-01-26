@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class UserServiceTest {
+public class  UserServiceTest {
 
     @Rule
     public MockitoRule rule = MockitoJUnit.rule();
