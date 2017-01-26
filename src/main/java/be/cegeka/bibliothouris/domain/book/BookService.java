@@ -10,7 +10,6 @@ import java.util.List;
 @Named
 public class BookService {
 
-
     @Inject
     private BookRepository bookRepository;
     private SearchBook searchBook;
