@@ -33,7 +33,6 @@ public class BookController {
     @RequestMapping(value = "/book", method = RequestMethod.POST)
     public
     @ResponseBody
-
     void addUser(@RequestParam(value = "titel", required = true) String title, @RequestParam(value = "firstName", required = true) String firstName, @RequestParam(value = "lastName", required = true) String lastName, @RequestParam(value = "isbn", required = true) String isbn) {
         bookService.addBook(isbn, title, firstName, lastName);
     }
@@ -44,7 +43,6 @@ public class BookController {
     String detailBook(@RequestParam(value = "isbn", required = true) String isbn) {
         return bookService.detailBook(isbn);
     }
-
 
 }
 

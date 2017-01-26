@@ -18,15 +18,10 @@ public class BookService {
         return bookRepository.getBooks();
     }
 
-<<<<<<< HEAD
-    public void addBook(int isbn, String title, String authorFirstName, String authorLastName){
 
-        bookRepository.addBook(new Book(isbn, title, authorFirstName, authorLastName));
-=======
     public void addBook(String isbn, String title, String authorFirstName, String authorLastName){
         Book book = new Book(isbn, title, authorFirstName, authorLastName);
         bookRepository.addBook(book);
->>>>>>> f493b664ac7ae42f0ad7ce11375590c149e6bc1d
     }
 
     public String detailBook (String isbn) {
