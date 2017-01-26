@@ -15,21 +15,21 @@ public class BookService {
     @Inject
     private SearchBook searchBook;
 
-    public List<Book> getAllBooks(){
+    public List<Book> getAllBooks() {
         return bookRepository.getBooks();
     }
 
 
-    public void addBook(String isbn, String title, String authorFirstName, String authorLastName){
+    public void addBook(String isbn, String title, String authorFirstName, String authorLastName) {
         Book book = new Book(isbn, title, authorFirstName, authorLastName);
         bookRepository.addBook(book);
     }
 
-    public String detailBook (String isbn) {
+    public String detailBook(String isbn) {
         String output = "";
         for (Book book : getAllBooks()) {
-            if (isbn.equals(book.getIsbn())){
-                output = "ISBN : "+book.getIsbn() + " Title : "+book.getTitle();
+            if (isbn.equals(book.getIsbn())) {
+                output = "ISBN : " + book.getIsbn() + " Title : " + book.getTitle();
 
             }
         }
@@ -46,15 +46,5 @@ public class BookService {
         }
         return result;
     }
-
-    public String showSearchIsbn(String isbn) {
-        return searchBook.searchIsbn(isbn);
-    }
-
-
-
-
-
-
-
+    
 }
