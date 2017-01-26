@@ -10,14 +10,14 @@ import java.util.List;
 @Named
 public class BookService {
 
-
     @Inject
     private BookRepository bookRepository;
-   // private SearchBook searchBook;
+    private SearchBook searchBook;
 
     public List<Book> getAllBooks(){
         return bookRepository.getBooks();
     }
+
 
     public void addBook(String isbn, String title, String authorFirstName, String authorLastName){
         Book book = new Book(isbn, title, authorFirstName, authorLastName);
@@ -35,10 +35,13 @@ public class BookService {
         return output;
     }
 
-    /*public String showSearchIsbn() {
-        return searchBook.showSearchIsbn();
+
+
+
+    public String showSearchIsbn(String isbn) {
+        return searchBook.searchIsbn(isbn);
     }
-*/
+
 
 
 
