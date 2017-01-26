@@ -31,9 +31,6 @@ public class BookServiceTest {
     private BookRepository bookRepository;
 
 
-    @Before
-    public void setUp() throws Exception {
-        ReflectionTestUtils.setField(bookRepository,  "books", new ArrayList<Book>);
-    }
+
 
 }
