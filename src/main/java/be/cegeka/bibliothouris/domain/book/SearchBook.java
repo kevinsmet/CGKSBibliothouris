@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 /**
  * Created by kevinsm on 25/01/2017.
  */
+@Named
 public class SearchBook extends BookService {
     List<Book> bookList = getAllBooks();
 
