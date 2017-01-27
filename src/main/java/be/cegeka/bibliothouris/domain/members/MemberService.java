@@ -13,10 +13,15 @@ public class MemberService {
 
 
     public void addMember(Member member){
-        if (member.getInsz().equals(null)||member.getLastName().equals(null)||member.getCity().equals(null))
+        if (member.getInsz().isEmpty()||member.getLastName().isEmpty()||member.getCity().isEmpty()) {
             throw new MemberValidationException("Needs to be filled in");
-        memberRepository.addMember(new Member(member))
-        ));
+        }
+        else if (memberRepository.getAllMembers().contains(member)) {
+            throw new MemberValidationException("That member already exists");
+        }
+        else {
+            memberRepository.addMember(member);
+        }
     }
 
     public List<Member> getAllMembers() {
