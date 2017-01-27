@@ -1,7 +1,7 @@
 package be.cegeka.bibliothouris.application;
 
-import be.cegeka.bibliothouris.domain.users.Member;
-import be.cegeka.bibliothouris.domain.users.MemberService;
+import be.cegeka.bibliothouris.domain.members.Member;
+import be.cegeka.bibliothouris.domain.members.MemberService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

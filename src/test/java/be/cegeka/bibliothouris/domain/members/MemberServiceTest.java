@@ -1,4 +1,4 @@
-package be.cegeka.bibliothouris.domain.users;
+package be.cegeka.bibliothouris.domain.members;
 
 import org.junit.Before;
 import org.junit.Rule;
