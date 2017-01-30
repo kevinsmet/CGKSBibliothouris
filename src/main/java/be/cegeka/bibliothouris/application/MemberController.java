@@ -12,7 +12,7 @@ import javax.inject.Inject;
 import java.util.List;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/member")
 public class MemberController {
 
     @Inject
@@ -25,11 +25,20 @@ public class MemberController {
         return memberService.getAllMembers();
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/member", method = RequestMethod.POST)
     public
     @ResponseBody
-    void addMember(@RequestParam(value = "name", required = true) String name) {
-        memberService.addMember(name);
+    void addMember(@RequestParam(value = "insz", required = true) String insz,
+                   @RequestParam(value = "firstName") String firstName,
+                   @RequestParam(value = "lastName", required = true) String lastName,
+                   @RequestParam(value = "street") String street,
+                   @RequestParam(value = "houseNumber") int houseNumber,
+                   @RequestParam(value = "postalCode") int postalCode,
+                   @RequestParam(value = "city", required = true) String city) {
+            Member member = new Member(insz, firstName, lastName, street, houseNumber, postalCode, city);
+            memberService.addMember(member);
     }
 
 }
+
+

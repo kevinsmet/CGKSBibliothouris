@@ -30,6 +30,7 @@ public class MemberServiceTest {
     @Mock
     private MemberRepository memberRepository;
 
+<<<<<<< HEAD
     private List<Member> members = new ArrayList<>();
 
     @Before
@@ -62,10 +63,22 @@ public class MemberServiceTest {
         else {
             memberRepository.addMember(member);
          */
+=======
+    @Test
+    public void addMember_ShouldCallUserRepository() throws Exception {
+        memberService.addMember(new Member("5l", "Seppe", "Gielen", "Somewhere", 69, 8460, "Hasselt"));
+        verify(memberRepository).addMember(new Member("5l", "Seppe", "Gielen", "Somewhere", 69, 8460, "Hasselt"));
+>>>>>>> e61e59704264f5177ae9d26e8ae6f78b24e8bbfd
     }
 
     @Test
     public void getAllMembers() throws Exception {
+<<<<<<< HEAD
+=======
+        Member member1 = new Member("1l", "Seppe", "Gielen", "Somewhere", 69, 8460, "Hasselt");
+        Member member2 = new Member("2l", "Sanne", "Ha", "jowjow", 48, 8852, "Nice");
+        Member member3 = new Member("3l", "Xan", "Vranckaert", "Schoolstraat", 78 , 1745, "Opwijk");
+>>>>>>> e61e59704264f5177ae9d26e8ae6f78b24e8bbfd
 
         when(memberRepository.getAllMembers()).thenReturn(Arrays.asList(member1, member2));
 

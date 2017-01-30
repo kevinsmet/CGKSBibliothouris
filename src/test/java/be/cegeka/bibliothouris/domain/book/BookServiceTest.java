@@ -26,38 +26,41 @@ public class BookServiceTest {
     @Mock
     private BookRepository bookRepository;
 
-    @Before
+    /*  @Before
     public void setup() {
         Book bookTest = new Book("12345", "Harry Potter", "J.K.", "Rowling");
         bookRepository.addBook(bookTest);
     }
+*/
 
     @Test
     public void addBook_ShouldCallUserRepository() throws Exception {
+<<<<<<< HEAD
         bookService.addBook("20", "Da VInce Code", "Dan","Brown");
         verify(bookRepository).addBook(new Book("20", "Da VInce Code", "Dan","Brown"));
+=======
+        bookService.addBook("20", "Da VInce Code", "Dan", "Brown");
+        verify(bookRepository).addBook(new Book("20", "Da VInce Code", "Dan", "Brown"));
+>>>>>>> e61e59704264f5177ae9d26e8ae6f78b24e8bbfd
     }
 
     @Test
-    public void getAllBooks()throws Exception {
+    public void getAllBooks() throws Exception {
         Book book1 = new Book("20", "Da VInce Code 0", "Dan0", "Brown0");
         Book book2 = new Book("30", "Da VInce Code 1", "Dan1", "Brown1");
         Book book3 = new Book("40", "Da VInce Code 2", "Dan2", "Brown2");
 
         when(bookRepository.getBooks()).thenReturn(Arrays.asList(book1, book2, book3));
         Assertions.assertThat(bookService.getAllBooks()).containsOnly(book1, book2, book3);
-
     }
 
     @Test
-    public void detailBook_returnsBookDetails () throws Exception {
+    public void detailBook_returnsBookDetails() throws Exception {
         when(bookRepository.getBooks()).thenReturn(Arrays.asList((new Book("12345", "Harry Potter", "J.K.", "Rowling"))));
         String expected = "ISBN : 12345 Title : Harry Potter";
         Assertions.assertThat(bookService.detailBook("12345")).isEqualTo(expected);
-
-
     }
 
-            //When book repo gets books from getBooks method, make sure that these books are
-            // also added to the list in bookService via List method 'getallbooks'
+    //When book repo gets books from getBooks method, make sure that these books are
+    // also added to the list in bookService via List method 'getallbooks'
 }

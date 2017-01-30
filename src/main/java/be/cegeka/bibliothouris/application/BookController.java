@@ -52,7 +52,6 @@ public class BookController {
         return bookService.detailBook(isbn);
     }
 
-
     @RequestMapping(value = "/booksearch/isbn", method = RequestMethod.GET)
     public
     @ResponseBody
