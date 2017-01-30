@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
@@ -23,6 +24,9 @@ public class MemberServiceTest {
 
     @Rule
     public MockitoRule rule = MockitoJUnit.rule();
+
+    @Rule
+    public ExpectedException exRule = ExpectedException.none();
 
     @InjectMocks
     private MemberService memberService;
@@ -46,12 +50,35 @@ public class MemberServiceTest {
         assertThat(memberService.getAllMembers()).containsOnly(member1, member2, member3);
     }
 
-    /*
     @Test
-    public void addMemberEmpty_throwsExceptionWhenEmptyFields () throws Exception {
-        Member member = new Member("1l", "Seppe", "", "Somewhere", 69, 8460, "Hasselt");
+    public void addMemberEx_throwsEmptyFieldException () throws Exception {
+        exRule.expectMessage("Needs to be filled in");
+        memberService.addMember(new Member("", "Xan", "Vranckaert", "Schoolstraat", 78 , 1745, "Opwijk"));
+    }
 
+    @Test
+    public void addMemberExAgain_throwsEmptyFieldException () throws Exception {
+        Member member1 = new Member("1l", "Seppe", "Gielen", "Somewhere", 69, 8460, "Hasselt");
+        Member member2 = new Member("2l", "Sanne", "Ha", "jowjow", 48, 8852, "Nice");
+        Member member3 = new Member("3l", "Xan", "Vranckaert", "Schoolstraat", 78 , 1745, "Opwijk");
+
+        exRule.expectMessage("That member already exists");
+        when(memberRepository.getAllMembers()).thenReturn(Arrays.asList(member1, member2, member3));
+        memberService.addMember(new Member("3l", "Xan", "Vranckaert", "Schoolstraat", 78 , 1745, "Opwijk"));
 
     }
-    */
 }
+
+/*
+public void addMember(Member member){
+        if (member.getInsz().isEmpty()||member.getLastName().isEmpty()||member.getCity().isEmpty()) {
+            throw new MemberValidationException("Needs to be filled in");
+        }
+        else if (memberRepository.getAllMembers().contains(member)) {
+            throw new MemberValidationException("That member already exists");
+        }
+        else {
+            memberRepository.addMember(member);
+        }
+    }
+ */
