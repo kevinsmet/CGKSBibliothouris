@@ -1,4 +1,4 @@
-package be.cegeka.bibliothouris.domain.users;
+package be.cegeka.bibliothouris.domain.members;
 
 import javax.inject.Named;
 import java.util.ArrayList;
@@ -16,4 +16,6 @@ public class MemberRepository {
     public void addMember(Member member){
         members.add(member);
     }
+
+    //still need to add getMemberDetails Method
 }
