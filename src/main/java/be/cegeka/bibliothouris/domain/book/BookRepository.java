@@ -27,13 +27,13 @@ public class BookRepository {
         return bookService.printSearch(searchBook.searchIsbn(nummer, books));
 
     }
-    public String   showSearchTitle(String letter){
+    public String showSearchTitle(String letter){
         return bookService.printSearch(searchBook.searchTitle(letter, books));
     }
-    public String   showSearchAuthorFirstName(String letter){
+    public String showSearchAuthorFirstName(String letter){
         return bookService.printSearch(searchBook.searchAuthorFirstName(letter, books));
     }
-    public String  showSearchAuthorLastName(String letter){
+    public String showSearchAuthorLastName(String letter){
         return bookService.printSearch(searchBook.searchAuthorLastName(letter, books));
     }
 

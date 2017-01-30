@@ -30,7 +30,6 @@ public class BookService {
         for (Book book : getAllBooks()) {
             if (isbn.equals(book.getIsbn())) {
                 output = "ISBN : " + book.getIsbn() + " Title : " + book.getTitle();
-
             }
         }
         return output;

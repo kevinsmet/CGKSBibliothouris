@@ -35,7 +35,6 @@ public class BookServiceTest {
     @Test
     public void addBook_ShouldCallUserRepository() throws Exception {
         bookService.addBook("20", "Da VInce Code", "Dan","Brown");
-
         verify(bookRepository).addBook(new Book("20", "Da VInce Code", "Dan","Brown"));
     }
 

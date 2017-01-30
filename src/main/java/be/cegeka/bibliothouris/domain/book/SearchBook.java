@@ -15,9 +15,7 @@ public class SearchBook  {
 
 
 
-    public List<Book>  searchIsbn(String number, List<Book> books) {
-
-
+    public List<Book> searchIsbn(String number, List<Book> books) {
         List<Book> result = new ArrayList<>();
         Stream<Book> stream = books.stream();
         Pattern p = Pattern.compile(".*"+number+".*");
