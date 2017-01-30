@@ -27,5 +27,5 @@ public class MemberService {
         return memberRepository.getAllMembers();
     }
 
-    //still need to add getMemberDetails Method
+    //still need to add getAllMemberDetails Method
 }
