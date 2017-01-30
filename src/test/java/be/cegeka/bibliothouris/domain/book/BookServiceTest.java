@@ -47,7 +47,6 @@ public class BookServiceTest {
 
         when(bookRepository.getBooks()).thenReturn(Arrays.asList(book1, book2, book3));
         Assertions.assertThat(bookService.getAllBooks()).containsOnly(book1, book2, book3);
-
     }
 
     @Test
