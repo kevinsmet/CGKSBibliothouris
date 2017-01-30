@@ -34,16 +34,16 @@ public class MemberServiceTest {
 
     @Test
     public void addMember_ShouldCallUserRepository() throws Exception {
-        memberService.addMember("Seppe");
+        //memberService.addMember("Seppe");
 
-        verify(memberRepository).addMember(new Member(5l, "Seppe"));
+        verify(memberRepository).addMember(new Member("5l", "Seppe", "Gielen", "Somewhere", 69, 8460, "Hasselt"));
     }
 
     @Test
     public void getAllMembers() throws Exception {
-        Member member1 = new Member(1l, "Seppe");
-        Member member2 = new Member(2l, "Sanne");
-        Member member3 = new Member(3l, "Xan");
+        Member member1 = new Member("1l", "Seppe", "Gielen", "Somewhere", 69, 8460, "Hasselt");
+        Member member2 = new Member("2l", "Sanne", "Ha", "jowjow", 48, 8852, "Nice");
+        Member member3 = new Member("3l", "Xan", "Vranckaert", "Schoolstraat", 78 , 1745, "Opwijk");
 
         when(memberRepository.getAllMembers()).thenReturn(Arrays.asList(member1, member2));
 
