@@ -27,15 +27,9 @@ public class MemberServiceTest {
     @Mock
     private MemberRepository memberRepository;
 
-    @Before
-    public void setUp() throws Exception {
-        ReflectionTestUtils.setField(memberService, "counter", new AtomicLong(4l));
-    }
-
     @Test
     public void addMember_ShouldCallUserRepository() throws Exception {
-        //memberService.addMember("Seppe");
-
+        memberService.addMember(new Member("5l", "Seppe", "Gielen", "Somewhere", 69, 8460, "Hasselt"));
         verify(memberRepository).addMember(new Member("5l", "Seppe", "Gielen", "Somewhere", 69, 8460, "Hasselt"));
     }
 

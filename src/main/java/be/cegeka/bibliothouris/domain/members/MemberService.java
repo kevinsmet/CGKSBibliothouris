@@ -11,7 +11,6 @@ public class MemberService {
     @Inject
     private MemberRepository memberRepository;
 
-
     public void addMember(Member member){
         if (member.getInsz().isEmpty()||member.getLastName().isEmpty()||member.getCity().isEmpty()) {
             throw new MemberValidationException("Needs to be filled in");
