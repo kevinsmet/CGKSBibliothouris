@@ -46,4 +46,20 @@ public class BookService {
 
     }
 
+    public String showSearchBookISBN(String number){
+        return printSearch(searchBook.searchIsbn(number, getAllBooks()));
+    }
+
+    public String   showSearchTitle(String letter){
+        return printSearch(searchBook.searchTitle(letter, getAllBooks()));
+    }
+
+    public String   showSearchAuthorFirstName(String letter){
+        return printSearch(searchBook.searchAuthorFirstName(letter, getAllBooks()));
+    }
+
+    public String  showSearchAuthorLastName(String letter){
+        return printSearch(searchBook.searchAuthorLastName(letter, getAllBooks()));
+    }
+
 }

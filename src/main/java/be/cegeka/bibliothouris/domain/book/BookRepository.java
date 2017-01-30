@@ -23,31 +23,4 @@ public class BookRepository {
         books.add(book);
     }
 
-    public String showSearchBookISBN(String nummer){
-        return bookService.printSearch(searchBook.searchIsbn(nummer, books));
-    }
-<<<<<<< HEAD
-    public String showSearchTitle(String letter){
-        return bookService.printSearch(searchBook.searchTitle(letter, books));
-    }
-    public String showSearchAuthorFirstName(String letter){
-        return bookService.printSearch(searchBook.searchAuthorFirstName(letter, books));
-    }
-    public String showSearchAuthorLastName(String letter){
-=======
-
-    public String   showSearchTitle(String letter){
-        return bookService.printSearch(searchBook.searchTitle(letter, books));
-    }
-
-    public String   showSearchAuthorFirstName(String letter){
-        return bookService.printSearch(searchBook.searchAuthorFirstName(letter, books));
-    }
-
-    public String  showSearchAuthorLastName(String letter){
->>>>>>> e61e59704264f5177ae9d26e8ae6f78b24e8bbfd
-        return bookService.printSearch(searchBook.searchAuthorLastName(letter, books));
-    }
-
-
 }

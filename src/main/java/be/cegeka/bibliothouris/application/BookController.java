@@ -56,28 +56,28 @@ public class BookController {
     public
     @ResponseBody
     String  searchIsbn(@RequestParam(value = "isbn", required = true) String isbn) {
-        return bookRepository.showSearchBookISBN(isbn);
+        return bookService.showSearchBookISBN(isbn);
     }
 
     @RequestMapping(path = "/booksearch/title", method = RequestMethod.GET)
     public
     @ResponseBody
     String   searchTitle(@RequestParam(value = "title", required = true) String letter) {
-        return bookRepository.showSearchTitle(letter);
+        return bookService.showSearchTitle(letter);
     }
 
     @RequestMapping(path = "/booksearch/lastName", method = RequestMethod.GET)
     public
     @ResponseBody
     String  searchAuthorLastName(@RequestParam(value = "lastName", required = true) String letter) {
-        return bookRepository.showSearchAuthorLastName(letter);
+        return bookService.showSearchAuthorLastName(letter);
     }
 
     @RequestMapping(path = "/booksearch/firstName", method = RequestMethod.GET)
     public
     @ResponseBody
     String  searchAuthorFirstName(@RequestParam(value = "firstName", required = true) String letter) {
-        return bookRepository.showSearchAuthorFirstName(letter);
+        return bookService.showSearchAuthorFirstName(letter);
 
     }
 

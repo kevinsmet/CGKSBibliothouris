@@ -13,13 +13,7 @@ import java.util.stream.Stream;
 
 public class SearchBook  {
 
-<<<<<<< HEAD
-
-
     public List<Book> searchIsbn(String number, List<Book> books) {
-=======
-    public List<Book>  searchIsbn(String number, List<Book> books) {
->>>>>>> e61e59704264f5177ae9d26e8ae6f78b24e8bbfd
         List<Book> result = new ArrayList<>();
         Stream<Book> stream = books.stream();
         Pattern p = Pattern.compile(".*"+number+".*");

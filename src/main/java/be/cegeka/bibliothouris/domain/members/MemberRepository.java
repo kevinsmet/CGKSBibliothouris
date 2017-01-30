@@ -16,4 +16,6 @@ public class MemberRepository {
     public void addMember(Member member){
         members.add(member);
     }
+
+    //still need to add getMemberDetails Method
 }

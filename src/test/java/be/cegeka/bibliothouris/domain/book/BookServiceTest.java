@@ -35,13 +35,8 @@ public class BookServiceTest {
 
     @Test
     public void addBook_ShouldCallUserRepository() throws Exception {
-<<<<<<< HEAD
         bookService.addBook("20", "Da VInce Code", "Dan","Brown");
         verify(bookRepository).addBook(new Book("20", "Da VInce Code", "Dan","Brown"));
-=======
-        bookService.addBook("20", "Da VInce Code", "Dan", "Brown");
-        verify(bookRepository).addBook(new Book("20", "Da VInce Code", "Dan", "Brown"));
->>>>>>> e61e59704264f5177ae9d26e8ae6f78b24e8bbfd
     }
 
     @Test
