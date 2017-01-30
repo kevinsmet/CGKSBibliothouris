@@ -39,8 +39,16 @@ public class MemberServiceTest {
         Member member2 = new Member("2l", "Sanne", "Ha", "jowjow", 48, 8852, "Nice");
         Member member3 = new Member("3l", "Xan", "Vranckaert", "Schoolstraat", 78 , 1745, "Opwijk");
 
-        when(memberRepository.getAllMembers()).thenReturn(Arrays.asList(member1, member2));
-
-        assertThat(memberService.getAllMembers()).containsOnly(member1, member2);
+        when(memberRepository.getAllMembers()).thenReturn(Arrays.asList(member1, member2, member3));
+        assertThat(memberService.getAllMembers()).containsOnly(member1, member2, member3);
     }
+
+    /*
+    @Test
+    public void addMemberEmpty_throwsExceptionWhenEmptyFields () throws Exception {
+        Member member = new Member("1l", "Seppe", "", "Somewhere", 69, 8460, "Hasselt");
+
+
+    }
+    */
 }
