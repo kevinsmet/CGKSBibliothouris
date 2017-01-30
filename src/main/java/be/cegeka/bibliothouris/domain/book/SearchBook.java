@@ -13,8 +13,9 @@ import java.util.stream.Stream;
 
 public class SearchBook  {
 
-    public List<Book>  searchIsbn(String number, List<Book> books) {
+    public List<Book> searchIsbn(String number, List<Book> books) {
         List<Book> result = new ArrayList<>();
+        number = number.replaceAll("\\*",".*");
         Stream<Book> stream = books.stream();
         Pattern p = Pattern.compile(".*"+number+".*");
         result = stream.filter(book -> p.matcher(book.getIsbn()).matches()).collect(Collectors.toList());
@@ -23,6 +24,7 @@ public class SearchBook  {
 
     public List<Book> searchTitle(String letter, List<Book> books) {
         List<Book> result = new ArrayList<>();
+        letter = letter.replaceAll("\\*",".*");
         Stream<Book> stream = books.stream();
         Pattern p = Pattern.compile(".*"+letter+".*");
         result = stream.filter(book -> p.matcher(book.getTitle()).matches()).collect(Collectors.toList());
@@ -31,6 +33,7 @@ public class SearchBook  {
 
     public List<Book> searchAuthorLastName(String letter, List<Book> books) {
         List<Book> result = new ArrayList<>();
+        letter = letter.replaceAll("\\*",".*");
         Stream<Book> stream = books.stream();
         Pattern p = Pattern.compile(".*"+letter+".*");
         result = stream.filter(book -> p.matcher(book.getAuthorLastName()).matches()).collect(Collectors.toList());
@@ -39,6 +42,7 @@ public class SearchBook  {
 
     public List<Book> searchAuthorFirstName(String letter, List<Book> books) {
         List<Book> result = new ArrayList<>();
+        letter = letter.replaceAll("\\*",".*");
         Stream<Book> stream = books.stream();
         Pattern p = Pattern.compile(".*"+letter+".*");
         result = stream.filter(book -> p.matcher(book.getAuthorFirstName()).matches()).collect(Collectors.toList());
