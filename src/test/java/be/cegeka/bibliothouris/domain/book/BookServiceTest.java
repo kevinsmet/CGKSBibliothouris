@@ -56,6 +56,5 @@ public class BookServiceTest {
         Assertions.assertThat(bookService.detailBook("12345")).isEqualTo(expected);
     }
 
-    //When book repo gets books from getBooks method, make sure that these books are
-    // also added to the list in bookService via List method 'getallbooks'
+
 }
