@@ -24,7 +24,7 @@ public class SearchBook  {
 
     public List<Book> searchTitle(String letter, List<Book> books) {
         List<Book> result = new ArrayList<>();
-        letter = letter.replaceAll("\\*",".*"); 
+        letter = letter.replaceAll("\\*",".*");
         Stream<Book> stream = books.stream();
         Pattern p = Pattern.compile(".*"+letter+".*");
         result = stream.filter(book -> p.matcher(book.getTitle()).matches()).collect(Collectors.toList());

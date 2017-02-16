@@ -27,17 +27,9 @@ public class BookService {
     public String detailBook(String isbn) {
         String output = "";
         for (Book book : getAllBooks()) {
-<<<<<<< HEAD
-            if (isbn.equals(book.getIsbn())){
-                output = "ISBN : "+book.getIsbn() + " \r\n Title : "+book.getTitle();
-=======
-            if (isbn.equals(book.getIsbn())) {
-                output = "ISBN : " + book.getIsbn() + " Title : " + book.getTitle();
-<<<<<<< HEAD
->>>>>>> d76ba9c688b5903c31e90dfd2aa76d10de5a216f
 
-=======
->>>>>>> e2ac84ddfdf50243d8a1917559df383e6452973e
+            if (isbn.equals(book.getIsbn())) {
+                output = "ISBN : " + book.getIsbn() + " \r\n Title : " + book.getTitle();
             }
         }
         return output;
