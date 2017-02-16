@@ -17,8 +17,6 @@ import java.util.List;
  * Created by williaam on 25/01/2017.
  */
 @Controller
-
-
 public class BookController {
 
 
