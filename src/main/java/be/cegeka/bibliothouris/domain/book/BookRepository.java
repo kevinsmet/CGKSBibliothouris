@@ -7,9 +7,12 @@ import java.util.List;
 
 @Named
 public class BookRepository {
+
+    //Repo should have the methods to search books by cedrtains parameters
     @Inject
     private SearchBook searchBook;
 
+    //Bookrepo should not know bookservice
     @Inject
     private BookService bookService;
 

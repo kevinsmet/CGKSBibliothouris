@@ -19,7 +19,6 @@ import java.util.List;
 @Controller
 public class BookController {
 
-
     @Inject
     private BookService bookService;
 
@@ -29,7 +28,7 @@ public class BookController {
     @RequestMapping(value = "/book", method = RequestMethod.GET)
     public
     @ResponseBody
-    List<Book> getBook() {
+    List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
 

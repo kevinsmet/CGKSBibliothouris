@@ -26,16 +26,18 @@ public class BookServiceTest {
     @Mock
     private BookRepository bookRepository;
 
+    //Make a bookfield and initialize it in before
     /*  @Before
     public void setup() {
         Book bookTest = new Book("12345", "Harry Potter", "J.K.", "Rowling");
         bookRepository.addBook(bookTest);
     }
-*/
+    */
 
     @Test
     public void addBook_ShouldCallUserRepository() throws Exception {
         bookService.addBook("20", "Da VInce Code", "Dan","Brown");
+        //Mocking
         verify(bookRepository).addBook(new Book("20", "Da VInce Code", "Dan","Brown"));
     }
 
@@ -44,7 +46,7 @@ public class BookServiceTest {
         Book book1 = new Book("20", "Da VInce Code 0", "Dan0", "Brown0");
         Book book2 = new Book("30", "Da VInce Code 1", "Dan1", "Brown1");
         Book book3 = new Book("40", "Da VInce Code 2", "Dan2", "Brown2");
-
+        //Stubbing
         when(bookRepository.getBooks()).thenReturn(Arrays.asList(book1, book2, book3));
         Assertions.assertThat(bookService.getAllBooks()).containsOnly(book1, book2, book3);
     }

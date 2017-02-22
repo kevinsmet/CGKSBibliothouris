@@ -25,14 +25,13 @@ public class BookService {
     }
 
     public String detailBook(String isbn) {
-        String output = "";
-        for (Book book : getAllBooks()) {
-
-            if (isbn.equals(book.getIsbn())) {
-                output = "ISBN : " + book.getIsbn() + " \r\n Title : " + book.getTitle();
-            }
+        List<Book> books = searchBook.searchIsbn(isbn,getAllBooks());
+        if (books.size()>0)
+        {
+            //book.get(0) should be extracted in another method
+            return "ISBN : " + books.get(0).getIsbn() + " \r\n Title : " + books.get(0).getTitle();
         }
-        return output;
+        return "";
     }
 
     public String printSearch(List<Book> resultBooks){
@@ -46,19 +45,20 @@ public class BookService {
         return result;
     }
 
+    //should be in repo
     public String showSearchBookISBN(String number){
         return printSearch(searchBook.searchIsbn(number, getAllBooks()));
     }
 
-    public String   showSearchTitle(String letter){
+    public String showSearchTitle(String letter){
         return printSearch(searchBook.searchTitle(letter, getAllBooks()));
     }
 
-    public String   showSearchAuthorFirstName(String letter){
+    public String showSearchAuthorFirstName(String letter){
         return printSearch(searchBook.searchAuthorFirstName(letter, getAllBooks()));
     }
 
-    public String  showSearchAuthorLastName(String letter){
+    public String showSearchAuthorLastName(String letter){
         return printSearch(searchBook.searchAuthorLastName(letter, getAllBooks()));
     }
 

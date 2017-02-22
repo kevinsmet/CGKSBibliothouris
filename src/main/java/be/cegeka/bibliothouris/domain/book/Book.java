@@ -48,6 +48,8 @@ public class Book {
         return isbn != null ? isbn.hashCode() : 0;
     }
 
+    //USE stringbuilder or string.format
+    // '+' makes a new string not like an append
     public String toString(){
         return "ISBN:" + isbn + "\n" +  "Title:" + title + "\n" + "First Name:" + authorFirstName + "\n" + "Last Name:" + authorLastName+ "\n\n";
     }
